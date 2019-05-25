@@ -98,7 +98,7 @@
       '10': 'Parking Facilities',
       '11': 'Vacant Land'
     };
-   //   <h1></h1>
+
     mapboxgl.accessToken = 'pk.eyJ1Ijoia2FpcnRzIiwiYSI6ImM4YzBkYzY1N2Y5N2FlNzU0NWM2MmNiODZlM2Q1OTgwIn0.d9_nOaJLLewP4fxSAhNryA';
     var map = new mapboxgl.Map({
       container: 'map', // container id
@@ -120,13 +120,6 @@
         });
         map.getCanvas().style.cursor = features.length ? 'pointer' : '';
       }
-        /* 
-      if (features.length) {
-        map.getCanvas().style.cursor = 'pointer';
-      } else {
-        map.getCanvas().style.cursor = '';
-      }
-      */
     });
 
     map.on('click', function(event) {
@@ -137,8 +130,6 @@
         layers: ['lots']
       };
       var features = map.queryRenderedFeatures(geometry, parameters);
-      //console.log(features);
-      //console.log(features.length + ' features');
       var lot = features[0];
       console.log(lot);
 
